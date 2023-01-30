@@ -105,7 +105,53 @@
 
         git rebase nombreDeLaRama
 
+    //MANIPULANDO LAS VERSIONES 
+    //DESHACER MODIFICACIONES
 
+    1. Permite deshacer los cambios que se le hicieron al archivo cuando los cambios no están en add ni en commit  
+    git restore nombreDelARchivo
+    
+    2. Hacer una cancelación cuando ya hiciste el git add. No quita las modificaciones solo elimina el add  
+    git restore --staged nombreDelArchivo
+
+    3. Eliminar el commit -m 
+    obtienes el ID del commit que quieres cancelar 
+    git revert numeroDelIDdelCommit 
+    //Esto genera un nuevo commit borrando el commit anterior, elimina también los cambios en el archivo.
+
+    //GUARDANDO PARA DESPÚES
+
+    1. Guardar sin hacer add ni commit 
+    git stash 
+
+    2. Mostrar el listado de stash que puedo retomar 
+    git stash list
+
+    3. Seleccionar el stash que quiero tomar, aplicar esos cambios a mi documento
+    git stash apply 0 
+    //El cero es el número que quiero tomar, ese puede cambiar 
+
+    4. Agarrar la modificación del stash y eliminarla de la lista
+    git stash pop 
+
+    //VIAJANDO EN EL TIEMPO 
+    1. Ver como era el proyecto en un commit en particular 
+    git checkout 7primerosDígitosDelAshDelCommit
+
+    Puedes jugar y modificar ahí, pero al volver a la rama master, esos commits y cambios no se habrán guardados
+
+
+    //GENERANDO ENTREGAS 
+    //VIENDO LAS MODIFICACIONES 
+
+    1. Ver los commits y qué se hizo en cada uno de ellos. Ver la diferencia entre cada uno de ellos
+
+    git diff hashDelCommitPrimero hashDelCommitSegundo 
+    git diff 4c59605..9393040 
+
+    2. Ver los cambios con respecto a la versión anterior y la que tengo con cambios que no he hecho add ni commit 
+
+    git diff
  -->
 
 </body>
