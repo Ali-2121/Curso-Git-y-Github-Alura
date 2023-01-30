@@ -35,6 +35,69 @@
         Sitio con más funciones de git log 
 
     Deberíamos generar un commit siempre que nuestra base de código esté en un estado que nos gustaría recordar. Nunca deberíamos tener commits de código que no funcionen, pero tampoco es interesante dejar el commit solo al final de una función.
+
+    //COMPARTIENDO EL TRABAJO
+    //Repositorios remotos 
+        1. Un nivel atrás de de donde están guardados los archivos se crea una carpeta nueva llamada "servidor" 
+        Se creará para solo guardar las modificaciones con 
+        --bare 
+        Indica que solo se tienen las modificaciones de los archivos no se tiene una copia de cada uno de los archivos físicos. Solo controla y permite acceder al repositorio como remoto 
+        
+        git init --bare 
+
+        2. En la carpeta donde se tienen los archivos que están siendo modificados se introduce el comando 
+
+        git remote
+
+        3. Para agregar un servidor remoto al servidor local 
+
+        git remote add servidorlocal rutaDel servidorQueIniciaste 
+        //servidorlocal es el nombre que le estás dando al servidor. 
+        (Esa ruta aparece en el paso anterior donde inicializó el repositorio remoto)
+        Y al volver a ingresar el comando: git remote 
+        Debe aparecer el nombre el servidor que acabas de agregar
+
+        4. Muestra el fetch y push. Push es el lugar a donde se estarán enviando los cambios 
+
+        git remote -v
+
+        5. Comando para clonar el repositorio remoto. Se le pone la dirección del servidor. 
+
+        git clone /c/Users/Alura/Documents/git-y-github/servidor proyecto
+        "proyecto" es el nombre la nueva carpeta que se creo donde quiero que se guarde el clon del proyecto, puede poonerse el nombre que quieras 
+
+        6. Empujar los cambios al servidor remoto 
+        
+        git push servidorlocar master
+                //nombre del servidor  //nombre de la rama
+        
+        7. Traer los datos del servidor al repositorio
+        //origin (nombre que se pone por defecto, pero se puede modificar con: )
+
+        gi remote rename origin servidorlocal
+                        //nomb que tenía  //nomb que se pone
+
+        git pull servidorlocal master
+        //Trae los archivos
+        //Indicas el nombre del servidor y después la rama que quieres que traiga 
+        
+        
+        //TRABAJANDO EN EQUIPO
+        //BRANCHES
+
+        Te muestra en qué rama estás
+        git branch
+
+        Creas la rama
+        git branch
+
+        Moverte a la rama
+        git checkout nombreDeLaRama
+
+        Creas la rama y te mueves a ella
+
+
+
  -->
 
 </body>
